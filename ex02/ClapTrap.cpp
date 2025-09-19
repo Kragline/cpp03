@@ -47,7 +47,7 @@ void	ClapTrap::attack(const std::string &target)
 		std::cout << _name << " has no hit energy to attack!" << std::endl;
 		return ;
 	}
-	std::cout << _name << " attacks " << target << ", causing "
+	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing "
 		<< _damage << " points of damage!" << std::endl;
 	--_energy;
 }

@@ -1,5 +1,4 @@
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <sstream>
@@ -14,7 +13,7 @@ int	main()
 		std::stringstream	ss;
 		ss << i;
 		std::string idx = ss.str();
-		int	type = rand() % 3;
+		int	type = rand() % 4;
 
 		if (type == 0)
 		{
@@ -31,13 +30,21 @@ int	main()
 			s.beRepaired(i + 1);
 			s.guardGate();
 		}
-		else
+		else if (type == 2)
 		{
 			FragTrap f("Frag_" + idx);
 			f.attack("Target");
 			f.takeDamage(i + 3);
 			f.beRepaired(i + 2);
 			f.highFivesGuys();
+		}
+		else
+		{
+			DiamondTrap d("Diamond_" + idx);
+			d.attack("Target");
+			d.takeDamage(i + 4);
+			d.beRepaired(i + 3);
+			d.whoAmI();
 		}
 	}
 	return (0);
